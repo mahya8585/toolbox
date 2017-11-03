@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "sendChannelList",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 0 12 4 * *"
+    }
+  ],
+  "disabled": false
+}
