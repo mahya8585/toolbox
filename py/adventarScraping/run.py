@@ -41,8 +41,8 @@ def has_today_log():
     """
     f = open(blob_name, 'rb')
     has_today_log = False
-    for log in f.readlines():
-        if log.strip() == today:
+    for line in f.readlines():
+        if today in line.decode('utf8'):
             has_today_log = True
             break;
     f.close()
