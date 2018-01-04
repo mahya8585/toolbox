@@ -9,11 +9,8 @@
     - トリガー名や時間などはご自由に
 - `run.py` をfunctionに登録
 - Kuduから以下作業
-    - cd D:\home\site\tools
-    - nuget.exe install -Source https://www.siteextensions.net/api/v2/ -OutputDirectory D:\home\site\tools python352x64
-    - mv /d/home/site/tools/python352x64.3.5.2.6/content/python35/* /d/home/site/tools/
-    - D:\home\site\tools\python.exe -m pip install xxxx
-        - requests
+    - cd D:\home\site\wwwroot
+    - Lib.zipをアップロード
 
 
 - slack takenを取得する
