@@ -1,13 +1,15 @@
 import cv2
 import os
 
+# 画像を比較して類似度を得る処理
+
 IMAGE_DIR = os.path.abspath(os.path.dirname(__file__)) + '/comparison/'
 # 画像サイズが一緒でない場合は画像サイズを合わせたほうがいい
 # IMAGE_SIZE = (993, 449)
 
 # 特徴量抽出処理の選定
-detector = cv2.AKAZE_create()
-# detector = cv2.ORB_create()
+# detector = cv2.AKAZE_create()
+detector = cv2.ORB_create()
 
 # 比較元の特徴量抽出(今回はグレースケールでの抽出とする)
 SOURCE_FILE_NAME = '1.png'
