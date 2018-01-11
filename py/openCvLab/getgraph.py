@@ -37,6 +37,8 @@ def extract_graph(imread):
 
     display_image(imread)
 
+    return contours
+
 
 if __name__ == '__main__':
     # グラフを数値化してみる処理
@@ -49,7 +51,14 @@ if __name__ == '__main__':
 
     display_image(source)
 
-    extract_graph(source)
+    contours = extract_graph(source)
 
+    # TODO 抽出したエッジ内のスパースな部分を補完する
+    
+    # TODO ターゲットについても↑と同じ情報を取得する
+
+    # TODO 同じエッジ数になったか確認する
+
+    # TODO マッチングして類似か判定するぞ(for文で) 総和の平均とかでまずは算出
 
 
