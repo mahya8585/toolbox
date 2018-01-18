@@ -54,7 +54,7 @@ if __name__ == '__main__':
     contours = extract_graph(source)
 
     # TODO 抽出したエッジ内のスパースな部分を補完する
-    
+
     # TODO ターゲットについても↑と同じ情報を取得する
 
     # TODO 同じエッジ数になったか確認する
