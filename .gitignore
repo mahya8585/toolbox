@@ -35,14 +35,6 @@
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -92,10 +84,6 @@ coverage.xml
 *,cover
 .hypothesis/
 
-# Translations
-*.mo
-*.pot
-
 # Django stuff:
 *.log
 local_settings.py
@@ -109,9 +97,6 @@ instance/
 
 # Sphinx documentation
 docs/_build/
-
-# PyBuilder
-target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -136,7 +121,5 @@ ENV/
 # Spyder project settings
 .spyderproject
 
-# Rope project settings
-.ropeproject
 
 .idea/
