@@ -17,7 +17,7 @@ for image in os.listdir(IMAGE_DIR):
 
     # 画像の切り取り
     # im.crop(左上X, 左上Y, 右下X, 右下Y)
-    im_crop = im.crop((292, 203, 1694, 830))
+    im_crop = im.crop((302, 203, 1685, 821))
 
     # ファイルの書き出し
     im_crop.save(os.path.join(OUTPUT_DIR,image), quality=100)
