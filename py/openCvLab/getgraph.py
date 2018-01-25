@@ -87,6 +87,7 @@ def complement_value(coordinates, x_size):
         is_continue = True
 
         # xの値が同値の場合はｙの値が大きいほうを採用する = あとから入ってきたデータを採用する
+        # TODO グラフが下に下がることを考慮してなかったので後程直す
         while is_continue:
             if len(coordinates) <= 0:
                 if 0 < len(correct):
@@ -130,7 +131,34 @@ def split_coodinates(coordinates, split_count):
     :param split_count: 分割数
     :return: 分割データリスト
     """
-    # TODO
+    split_point = len(coordinates) // split_count
+    response = []
+
+    # 指定した数ずつに分割したデータリストを作成
+    start = 0
+    while len(coordinates) - start >= split_point:
+        response.append(coordinates[start:start+split_point])
+        start = start + split_point
+
+    # 剰余データの処理
+    response.append(coordinates[start:])
+
+    return response
+
+def create_coordinates_list(img, split_count):
+    """
+    座標データを指定した数＋1に分割したリストを作成する
+    :return: 分割済み座標セット
+    """
+    # 輪郭抽出（グラフ点抽出)
+    img_height, img_weight = img.shape[:2]
+    coordinates = extract_graph(imread=source, img_weight=img_weight, img_height=img_height)
+
+    # 抽出したエッジ内のスパースな部分を補完する
+    graph_coordinates = complement_value(coordinates=coordinates, x_size=img_weight)
+
+    # データセット分割
+    return split_coodinates(graph_coordinates, split_count)
 
 
 if __name__ == '__main__':
@@ -139,22 +167,16 @@ if __name__ == '__main__':
     # 画像サイズが一緒でない場合は画像サイズを合わせたほうがいい
     # IMAGE_SIZE = (993, 449)
 
-    SOURCE_FILE_NAME = '1-8avetmp.png'
-    source = cv2.imread(IMAGE_DIR + SOURCE_FILE_NAME)
-    # display_image(source)
+    # 画像分割数
+    SPLIT_CNT = 5
 
-    # 輪郭抽出（グラフ点抽出)
-    img_height, img_weight = source.shape[:2]
-    coordinates = extract_graph(imread=source, img_weight=img_weight, img_height=img_height)
+    # 評価元画像
+    source = cv2.imread(IMAGE_DIR + '1.png')
+    source_coordinates = create_coordinates_list(source, SPLIT_CNT)
 
-    # 抽出したエッジ内のスパースな部分を補完する
-    graph_coordinates = complement_value(coordinates=coordinates, x_size=img_weight)
-
-    # データセット分割
-    split_graph = split_coodinates(graph_coordinates, 5)
-
-    # TODO ターゲットについても↑と同じ情報を取得する
-
-    # TODO 同じエッジ数になったか確認する
+    # 評価対象画像
+    target = cv2.imread(IMAGE_DIR + '2.png')
+    target_coordinates = create_coordinates_list(target, SPLIT_CNT)
 
     # TODO マッチングして類似か判定するぞ(for文で) 総和の平均とかでまずは算出
+
