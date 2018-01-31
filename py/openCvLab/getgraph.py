@@ -1,5 +1,6 @@
 import cv2
 import os
+import numpy as np
 
 
 def display_image(img):
@@ -137,13 +138,14 @@ def split_coodinates(coordinates, split_count):
     # 指定した数ずつに分割したデータリストを作成
     start = 0
     while len(coordinates) - start >= split_point:
-        response.append(coordinates[start:start+split_point])
+        response.append(coordinates[start:start + split_point])
         start = start + split_point
 
     # 剰余データの処理
     response.append(coordinates[start:])
 
     return response
+
 
 def create_coordinates_list(img, split_count):
     """
@@ -152,13 +154,36 @@ def create_coordinates_list(img, split_count):
     """
     # 輪郭抽出（グラフ点抽出)
     img_height, img_weight = img.shape[:2]
-    coordinates = extract_graph(imread=source, img_weight=img_weight, img_height=img_height)
+    coordinates = extract_graph(imread=img, img_weight=img_weight, img_height=img_height)
 
     # 抽出したエッジ内のスパースな部分を補完する
     graph_coordinates = complement_value(coordinates=coordinates, x_size=img_weight)
 
     # データセット分割
     return split_coodinates(graph_coordinates, split_count)
+
+
+def compare(source_coordinates, target_coordinates):
+    """
+    分割したファイルをそれぞれ比較し、類似度を確認する
+    :param source_coordinates:
+    :param target_coordinates:
+    :return:
+    """
+    print("類似度判定を行います。数値が小さいほど類似しています")
+    for list_index in range(SPLIT_CNT):
+        s_coordinates = source_coordinates[list_index]
+        t_coordinates = target_coordinates[list_index]
+
+        distances = []
+        for array_index in range(len(s_coordinates)):
+            sc = np.array(s_coordinates[array_index])
+            tc = np.array(t_coordinates[array_index])
+
+            distances.append(np.linalg.norm(sc - tc))
+
+        similar = sum(distances) / len(distances)
+        print(str(list_index + 1) + '枚目の画像の類似度：' + str(similar))
 
 
 if __name__ == '__main__':
@@ -179,4 +204,4 @@ if __name__ == '__main__':
     target_coordinates = create_coordinates_list(target, SPLIT_CNT)
 
     # TODO マッチングして類似か判定するぞ(for文で) 総和の平均とかでまずは算出
-
+    compared = compare(source_coordinates, target_coordinates)
