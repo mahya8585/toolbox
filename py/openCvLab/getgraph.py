@@ -1,6 +1,7 @@
 import cv2
 import os
 import numpy as np
+from statistics import mean, median, variance, stdev
 
 
 def display_image(img):
@@ -12,6 +13,21 @@ def display_image(img):
     cv2.imshow('img', img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+def write_coodinates(img, target_coodinates):
+    """
+    デバッグ用。座標を画像に書き込む
+    :param img:
+    :param target_coodienates:
+    :return:
+    """
+    for coordinate in target_coodinates:
+        x = coordinate[0]
+        y = coordinate[1]
+        # 終点の座標、色、太さ、線のタイプ
+        cv2.line(img, (x, y), (x, y), (0, 255, 0), 2, 4)
+
+    display_image(img)
 
 
 def judge_4points(coordinate, img_height, img_weight):
@@ -87,8 +103,7 @@ def complement_value(coordinates, x_size):
         correct = []
         is_continue = True
 
-        # xの値が同値の場合はｙの値が大きいほうを採用する = あとから入ってきたデータを採用する
-        # TODO グラフが下に下がることを考慮してなかったので後程直す
+        # x座標すべてに値が保管されるようにする
         while is_continue:
             if len(coordinates) <= 0:
                 if 0 < len(correct):
@@ -101,6 +116,7 @@ def complement_value(coordinates, x_size):
 
             target = coordinates.pop(0)
             if target[0] == x:
+                # xの値が同値の場合はｙの値が大きいほうを採用する = あとから入ってきたデータを採用する
                 correct = target
                 continue
             else:
@@ -159,18 +175,22 @@ def create_coordinates_list(img, split_count):
     # 抽出したエッジ内のスパースな部分を補完する
     graph_coordinates = complement_value(coordinates=coordinates, x_size=img_weight)
 
+    # TODO debug
+    write_coodinates(img, graph_coordinates)
+
     # データセット分割
     return split_coodinates(graph_coordinates, split_count)
 
 
-def compare(source_coordinates, target_coordinates):
+def extract_similar(source_coordinates, target_coordinates):
     """
     分割したファイルをそれぞれ比較し、類似度を確認する
     :param source_coordinates:
     :param target_coordinates:
     :return:
     """
-    print("類似度判定を行います。数値が小さいほど類似しています")
+    last_data = ''
+    result = []
     for list_index in range(SPLIT_CNT):
         s_coordinates = source_coordinates[list_index]
         t_coordinates = target_coordinates[list_index]
@@ -182,12 +202,33 @@ def compare(source_coordinates, target_coordinates):
 
             distances.append(np.linalg.norm(sc - tc))
 
-        similar = sum(distances) / len(distances)
-        print(str(list_index + 1) + '枚目の画像の類似度：' + str(similar))
+        # print(distances)
+        similar = mean(distances)
+        # similar = median(distances)
+        # similar = stdev(distances)
+
+        result.append(similar)
+        last_data = last_data + str(similar) + '\t'
+
+    print(last_data)
+    return result
+
+
+def judge(similar):
+    ng = 40
+    check = 20
+    for s in similar:
+        print('S: ' + str(s))
+        if ng < s:
+            return '類似しない画像が検出されました'
+
+        elif check < s:
+            return '類似していないかもしれません。確認してください'
+
+    return '類似画像です'
 
 
 if __name__ == '__main__':
-    # グラフを数値化してみる処理
     IMAGE_DIR = os.path.abspath(os.path.dirname(__file__)) + '/comparison/'
     # 画像サイズが一緒でない場合は画像サイズを合わせたほうがいい
     # IMAGE_SIZE = (993, 449)
@@ -203,5 +244,8 @@ if __name__ == '__main__':
     target = cv2.imread(IMAGE_DIR + '2.png')
     target_coordinates = create_coordinates_list(target, SPLIT_CNT)
 
-    # TODO マッチングして類似か判定するぞ(for文で) 総和の平均とかでまずは算出
-    compared = compare(source_coordinates, target_coordinates)
+    # 類似度抽出
+    similar = extract_similar(source_coordinates, target_coordinates)
+
+    # 判定
+    print(judge(similar))
