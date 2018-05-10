@@ -58,11 +58,10 @@ def delete_file(file_ids, token):
     :param file_ids: 削除対象ファイルIDリスト
     :param token: workspace token
     """
-    delete_url_prefix = 'https://slack.com/api/files.delete?pretty=1&token=' + token + '&file='
+    delete_url = 'https://slack.com/api/files.delete?pretty=1&token=' + token + '&file='
     for file_id in file_ids:
         print(file_id + 'を削除します')
-        delete_url = delete_url_prefix + file_id
-        response = requests.post(delete_url)
+        response = requests.post(delete_url + file_id)
 
         if response.json()['ok'] is False:
             print(file_id + 'の削除に失敗しました')
