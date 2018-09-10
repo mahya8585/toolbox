@@ -1,0 +1,26 @@
+参加枠名,ユーザー名,表示名,コメント,参加ステータス,出欠ステータス,会場利用規定により、会場様へフルネームの提出が必要です。お名前のご記入をお願いいたします。,会社名のご記入をお願いします,連絡先（メールアドレス）のご記入をお願いします,オフィス見学にあたっての同意書が必要です,LT枠でご参加の方はタイトルを教えてください。後日でも構いません。その場合slack（女性のみ）かメール（tokyo＠pyladies.com）でご連絡お願いします。,LT枠でご参加の方で、時間帯の希望がある場合は教えてください。,更新日時,受付番号
+参加枠(女性) Female,user1,name1,comment1,参加,,fullname1,company1,address1,同意します,,,2018年9月8日 14時50分,1
+参加枠(女性) Female,user2,name2,comment2,参加,,fullname2,company2,address2,同意します,,,2018年9月8日 15時22分,2
+参加枠(女性) Female,user3,name3,comment3,参加,,fullname3,company3,address3,同意します,,,2018年9月8日 15時40分,3
+参加枠(女性) Female,user4,name4,comment4,参加,,fullname4,company4,address4,同意します,,,2018年9月8日 15時48分,4
+参加枠(女性) Female,user5,name5,comment5,参加,,fullname5,company5,address5,同意します,,,2018年9月8日 18時01分,5
+参加枠(女性) Female,user6,name6,comment6,参加,,fullname6,company6,address6,同意します,,,2018年9月8日 19時55分,6
+参加枠(女性) Female,user7,name7,comment7,参加,,fullname7,company7,address7,同意します,,,2018年9月8日 22時41分,7
+参加枠(女性) Female,user8,name8,comment8,参加,,fullname8,company8,address8,同意します,,,2018年9月9日 00時36分,8
+参加枠(女性) Female,user9,name9,comment9,参加,,fullname9,company9,address9,同意します,,,2018年9月9日 00時39分,9
+参加枠(女性) Female,user10,name10,comment10,参加,,fullname10,company10,address10,同意します,,,2018年9月10日 09時59分,10
+参加枠(女性) Female,user11,name11,comment11,参加,,fullname11,company11,address11,同意します,,,2018年9月10日 11時17分,11
+LT枠(男女問わず) All Gender,user12,name12,comment12,参加,,fullname12,company12,address12,同意します,title1,,2018年9月8日 14時09分,12
+LT枠(男女問わず) All Gender,user13,name13,comment13,参加,,fullname13,company13,address13,同意します,title2,,2018年9月8日 14時13分,13
+LT枠(男女問わず) All Gender,user14,name14,comment14,参加,,fullname14,company14,address14,同意します,title3,,2018年9月8日 14時14分,14
+LT枠(男女問わず) All Gender,user15,name15,comment15,参加,,fullname15,company15,address15,同意します,title4,,2018年9月8日 14時14分,15
+LT枠(男女問わず) All Gender,user16,name16,comment16,参加,,fullname16,company16,address16,同意します,title5,,2018年9月8日 14時17分,16
+LT枠(男女問わず) All Gender,user17,name17,comment17,参加,,fullname17,company17,address17,同意します,title6,,2018年9月8日 14時52分,17
+LT枠(男女問わず) All Gender,user18,name18,comment18,参加,,fullname18,company18,address18,同意します,title7,,2018年9月8日 17時30分,18
+LT枠(男女問わず) All Gender,user19,name19,comment19,参加,,fullname19,company19,address19,同意します,title8,,2018年9月8日 17時33分,19
+LT枠(男女問わず) All Gender,user20,name20,comment20,参加,,fullname20,company20,address20,同意します,title9,,2018年9月8日 18時41分,20
+LT枠(男女問わず) All Gender,user21,name21,comment21,参加,,fullname21,company21,address21,同意します,title10,,2018年9月8日 19時25分,21
+LT枠(男女問わず) All Gender,user22,name22,comment22,参加,,fullname22,company22,address22,同意します,title11,,2018年9月9日 09時35分,22
+LT枠(男女問わず) All Gender,user23,name23,comment23,参加,,fullname23,company23,address23,同意します,title12,,2018年9月9日 23時43分,23
+LT枠(男女問わず) All Gender,user24,name24,comment24,参加,,fullname24,company24,address24,同意します,title13,,2018年9月10日 09時09分,24
+会場スタッフ枠 Staff of Room,user25,name25,comment25,参加,,fullname25,company25,address25,同意します,,,2018年9月8日 17時07分,25
