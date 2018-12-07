@@ -30,7 +30,7 @@ def request_computer_vision(image_url, endpoint):
     }
     header = {
         'Content-Type': 'application/json',
-        'Ocp-Apim-Subscription-Key': '3869dd1a50a944c6a8b7c1e3cd109537'
+        'Ocp-Apim-Subscription-Key': 'xxxxxxxxxxxxxxxx'
     }
 
     res = requests.post(endpoint, headers=header, data=json.dumps(post_body))
