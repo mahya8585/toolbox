@@ -20,16 +20,16 @@ def create_blur_img(src_img, face_rectangle, blur_ratio):
 
     # ブラー効果させたい部分を切り抜く
     src_crop = src_img.crop((
-        top,
         left,
-        top + face_rectangle['width'],
-        left + face_rectangle['height']
+        top,
+        left + face_rectangle['width'],
+        top + face_rectangle['height']
     ))
 
     # 切り抜いた画像をブラー化する
     crop_blur = src_crop.filter(ImageFilter.GaussianBlur(blur_ratio))
     # 元画像にブラー化した画像を張り付ける
-    src_img.paste(crop_blur, (top, left))
+    src_img.paste(crop_blur, (left, top))
 
     return src_img
 
@@ -43,7 +43,7 @@ def get_face_rectangle(img):
     url = 'https://japaneast.api.cognitive.microsoft.com/face/v1.0/detect'
     header = {
         'Content-Type': 'application/octet-stream',
-        'Ocp-Apim-Subscription-Key': 'ｘｘｘｘ'
+        'Ocp-Apim-Subscription-Key': 'xxxxx'
     }
 
     res = requests.post(url, headers=header, data=open(img, 'rb'))
