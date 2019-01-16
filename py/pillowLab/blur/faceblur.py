@@ -64,6 +64,7 @@ def main():
     # モザイク加工済み画像が出力されるディレクトリ
     output_dir = os.path.join(base_dir, 'result')
 
+    # モザイクをかけたい画像が入ってるディレクトリ内すべてのファイルに処理をします
     for image in os.listdir(img_dir):
         if image == '__init__.py':
             continue
@@ -72,10 +73,10 @@ def main():
         img_path = os.path.join(img_dir, image)
         im = Image.open(img_path)
 
-        # TODO 顔位置の特定
+        # 顔位置の特定
         rectangles = get_face_rectangle(img_path)
 
-        # blur処理
+        # blur処理(1枚に複数の顔があったら全部にblur処理かけるよ～）
         blur_img = im
         for rectangle in rectangles:
             ratio = 15.0
