@@ -1,0 +1,2 @@
+## Koalas.ipynb
+- githubの表示だとkoalasとpyspark dataframeの表示が見にくい感じですが、databricksのnotebook上だとそこそこ見やすい感じに表示されます
