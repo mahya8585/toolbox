@@ -2,3 +2,7 @@
 
 out/
 .gradle/
+
+ja/.gradle/
+ja/build.gradle
+ja/build/
