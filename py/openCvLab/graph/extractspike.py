@@ -146,7 +146,7 @@ def write_houghline_p(target_imread):
 
 if __name__ == '__main__':
     # 共通準備処理
-    target_imread = ready_use_opencv('../sample.png')
+    target_imread = ready_use_opencv('sample.png')
 
     # 画像切り出し
     # write_image(cut_image(target_imread), 'cut.png')
