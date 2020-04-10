@@ -1,9 +1,9 @@
 import java.util.Base64;
 
 /**
- * Base64のエンコード・デコード
+ * Base64&#x306e;&#x30a8;&#x30f3;&#x30b3;&#x30fc;&#x30c9;&#x30fb;&#x30c7;&#x30b3;&#x30fc;&#x30c9;
  */
-public class Base64Converter {
+class Base64Converter {
     public static void main(String... args) {
         //エンコード
         final String words = "よーしBase64にするぞ";
