@@ -27,9 +27,15 @@ def extract_name(web_page):
 
                 # 機能名（英語のみを抽出)
                 functions = service.find_all('a', class_='js-subm-uhf-nav-link')
+                blank = True
                 for function in functions:
                     if p.fullmatch(function.text.replace(' ', '')):
                         print(service_name + ' : ' + function.text)
+                        blank = False
+
+                # 機能名がないものはサービス名のみ記載
+                if blank:
+                    print(service_name)
 
             break
 

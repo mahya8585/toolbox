@@ -4,7 +4,7 @@
 3. ランダムに取り出して発表順番を決定
 """
 import csv
-import random
+import democreators
 
 
 def create_speakers(file_name):
@@ -39,7 +39,7 @@ def draw_for_turns(speakers):
     :return:
     """
     keys = list(speakers.keys())
-    random.shuffle(keys)
+    democreators.shuffle(keys)
 
     for key in keys:
         print('名前：{} , タイトル: {}'.format(key, speakers[key]))
