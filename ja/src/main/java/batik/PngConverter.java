@@ -9,6 +9,9 @@ import java.io.*;
 import java.util.Arrays;
 
 
+/**
+  本コードと同じディレクトリ内にあるSVGディレクトリへSVGが格納されたディレクトリを置くと作れる
+**/
 public class PngConverter {
     //TODO ちゃんといい感じにパスを取れるように変更する
    static final String basePath = new File(".").getAbsoluteFile().getParent() + "\\src\\main\\java\\batik";
