@@ -8,7 +8,7 @@ def extract_name(web_page):
     """
     # とりあえずhtml_parserで回すよー
     page_soup = BeautifulSoup(web_page.text, 'html.parser')
-    azure_services = page_soup.find_all('h2', class_='text-heading4')
+    azure_services = page_soup.find_all('h2', class_='text-heading5')
 
     service_names = []
     for service_obj in azure_services:
@@ -16,9 +16,9 @@ def extract_name(web_page):
         result_name = service_name.text.replace('プレビュー', '')
         service_names.append(result_name)
 
-    print(len(service_names))
+    print('全サービス数 : ' + str(len(service_names)))
     name_set = dict.fromkeys(service_names)
-    print(len(name_set))
+    print('重複排除 : ' + str(len(name_set)))
     for key in name_set:
         print(key)
 
@@ -49,7 +49,7 @@ url = requests.get('https://azure.microsoft.com/ja-jp/services/')
 # サービス名だけ(重複排除済み・プレビュー込み)
 extract_name(url)
 # カテゴリ・サービス名の対応一覧(サービス重複のまま)
-extract_category_name(url)
+# extract_category_name(url)
 
 
 print('function end.')
