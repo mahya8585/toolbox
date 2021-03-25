@@ -6,3 +6,4 @@ out/
 ja/.gradle/
 ja/build.gradle
 ja/build/
+py/scraping/localCloudCredit/target.html

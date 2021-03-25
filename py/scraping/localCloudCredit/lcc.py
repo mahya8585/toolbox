@@ -31,6 +31,8 @@ def extract_info(web_page):
 # メイン処理ここから
 """cloudクレジットの保有ファンド一覧から欲しい情報をとってくる。TSV化する。その後は良しなに。
 注：認証処理が面倒だったのでとりあえず第一陣開発ではローカルにhtmlファイルをダウンロードしてあるところから進めます
+mypage/investmentrecord/all
+F12 + copy outerHTML
 """
 html_file = Path.cwd().joinpath('target.html')
 
