@@ -8,7 +8,7 @@ def extract_name(web_page):
     """
     # とりあえずhtml_parserで回すよー
     page_soup = BeautifulSoup(web_page.text, 'html.parser')
-    azure_services = page_soup.find_all('h2', class_='text-heading5')
+    azure_services = page_soup.find_all('h3', class_='text-heading5')
 
     service_names = []
     for service_obj in azure_services:
@@ -30,7 +30,7 @@ def extract_category_name(web_page):
     # とりあえずhtml_parserで回すよー
     page_soup = BeautifulSoup(web_page.text, 'html.parser')
     contents = page_soup.find(id='products-list')
-    h2s = contents.find_all('h2')
+    h2s = contents.find_all('h3')
 
     category = ''
     for h2 in h2s:

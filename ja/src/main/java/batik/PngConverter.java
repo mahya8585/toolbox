@@ -10,13 +10,13 @@ import java.util.Arrays;
 
 
 /**
-  本コードと同じディレクトリ内にあるSVGディレクトリへSVGが格納されたディレクトリを置くと作れる
-**/
+ 本コードと同じディレクトリ内にあるSVGディレクトリへSVGが格納されたディレクトリを置くと作れる
+ **/
 public class PngConverter {
     //TODO ちゃんといい感じにパスを取れるように変更する
-   static final String basePath = new File(".").getAbsoluteFile().getParent() + "\\src\\main\\java\\batik";
-   static final String svgDir = basePath + "\\svg";
-   static final String pngDir = basePath + "\\png";
+    static final String basePath = new File(".").getAbsoluteFile().getParent() + "\\src\\main\\java\\batik";
+    static final String svgDir = basePath + "\\svg";
+    static final String pngDir = basePath + "\\png";
 
     /**
      * SVGディレクトリ直下にsvgファイルは置かないでねｗ
@@ -72,4 +72,3 @@ public class PngConverter {
         }
     }
 }
-
