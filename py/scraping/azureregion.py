@@ -11,9 +11,9 @@ def extract_area(web_page):
     target = page_soup.find('div', class_='row row-size3 column')
     azure_area_body = target.find('p', class_='text-body5')
 
-    areas = azure_area_body.text.split(sep='。')[1].split(sep='、')
+    areas = azure_area_body.text.split(sep='、')
 
-    print('エリア数 : ' + str(len(areas)))
+    print('エリア数 : ' + str(len(areas)-1))
     print(areas)
     print(azure_area_body.text)
 
@@ -27,7 +27,7 @@ def extract_region(web_page):
     target = page_soup.find(id='new-regions').find('div', class_='row row-size2 column')
     azure_region_body = target.find('p', class_='text-body5')
 
-    regions = azure_region_body.text.split(sep='。')[1].split(sep='、')
+    regions = azure_region_body.text.split(sep=':')[1].split(sep='、')
 
     print('リージョン数 : ' + str(len(regions)))
     print(regions)
@@ -41,7 +41,6 @@ url = requests.get('https://azure.microsoft.com/ja-jp/global-infrastructure/geog
 extract_area(url)
 # リージョン
 extract_region(url)
-
 
 
 print('function end.')

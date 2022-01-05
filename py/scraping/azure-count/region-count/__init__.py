@@ -15,7 +15,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         target = page_soup.find(id='new-regions').find('div', class_='row row-size2 column')
         azure_region_body = target.find('p', class_='text-body5')
 
-        regions = azure_region_body.text.split(sep='。')[1].split(sep='、')
+        regions = azure_region_body.text.split(sep=':')[1].split(sep='、')
 
         logging.info('リージョン数 : ' + str(len(regions)))
         logging.info(regions)
