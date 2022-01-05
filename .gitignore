@@ -1,9 +1,11 @@
 .idea/
 
 out/
-.gradle/
+.gradle
 
-ja/.gradle/
-ja/build.gradle
-ja/build/
+build.gradle
+build
+
 py/scraping/localCloudCredit/target.html
+
+node_modules
