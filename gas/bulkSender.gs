@@ -20,7 +20,7 @@ const recipient = "TOに設定したいメールアドレスを入れる";
 //slackへポストする
 function postSlackMessage(message_text) {
     var payload = {
-      'channel'    : "abk-mailfailure-system",
+      'channel'    : "abks-management",
       'text'       : message_text
   };
   
