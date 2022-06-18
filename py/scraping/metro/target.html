@@ -1,0 +1,1474 @@
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="ja"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <meta charset="utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-type" content="text/javascript">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="東京メトロ,スタンプラリー">
+<!-- OGP Settings -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="東京メトロ全駅スタンプラリー">
+<meta property="og:title" content="東京メトロ全駅スタンプラリー">
+<meta property="og:url" content="https://www.event-metro.jp/rally/">
+<meta property="og:image" content="https://www.event-metro.jp/rally/src/image/common/ogimage.png">
+<meta property="og:locale" content="ja_JP">
+  <title>マイページ｜東京メトロ全駅スタンプラリー</title>
+  <!-- all-stations_main -->
+<!-- Begin CSS -->
+<link rel="stylesheet" href="/rally/css/all-stations/pc/reset.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"><link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/rally/css/all-stations/pc/base.css?1655525594">
+<link rel="stylesheet" href="/rally/css/all-stations/pc/layout.css?1655525594">
+<link rel="stylesheet" href="/rally/css/all-stations/pc/module.css?1655525594">
+<link rel="stylesheet" href="/rally/css/all-stations/pc/mypage.css?1655525594">
+<!-- Begin other links -->
+<link rel="apple-touch-icon" href="https://www.event-metro.jp/rally/src/image/common/apple-touch-icon.png">
+  <!-- Google Analytics -->
+<script async="" src="//www.google-analytics.com/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45371359-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+<body id="mypage" data-controller="mypage" data-action="index">
+
+<div id="container" class="l-container" style="padding-bottom: 486px;">
+  <!-- all-stations/header -->
+
+<header id="header" class="l-header">
+  <p>
+    <a href="/rally/all-stations/main" class="alpha transition">
+      <img src="/rally/src/all-stations/image/common/header_logo.png" alt="東京メトロ 全駅スタンプラリー" class="logo">
+      <span class="text fwBold">マイページ</span>
+    </a>
+  </p>
+  <div class="navHandler">
+    <button type="button" data-navhandler="horizontal" class="btnNavHandler alpha transition">
+      <span class="icon-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </span>
+      <span class="text">MENU</span>
+    </button>
+  </div>
+</header>
+
+<div class="l-sidepanel" id="sidepanel">
+  <nav id="nav" class="l-nav">
+    <ul class="listNav navMyPage">
+      <li class="listNavItem">
+                  <a href="#top" data-scroll="">マイページトップ</a>
+              </li>
+      <li class="listNavItem">
+                  <a href="#allStations" data-scroll="">駅スタンプ一覧</a>
+              </li>
+      <li class="listNavItem">
+                  <a href="#prize" data-scroll="">達成賞</a>
+              </li>
+      <li class="listNavItem">
+                  <a href="#howto" data-scroll="">遊び方説明</a>
+              </li>
+      <li class="listNavItem">
+                  <a href="#posting" data-scroll="">駅スタンプポスター<br>掲出駅</a>
+              </li>
+    </ul>
+    <ul class="listNav">
+      <li class="listNavItem">
+        <a href="/rally/all-stations/profile/">登録情報変更</a>
+      </li>
+      <li class="listNavItem">
+        <a href="/rally/all-stations/logout">ログアウト</a>
+      </li>
+      <li class="listNavItem">
+        <a href="/rally/all-stations/">全駅スタンプラリー トップに戻る</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+  <h2 class="innerPageTitle">マイページ</h2>
+
+  <div id="contents" class="l-contents">
+    <div id="main" class="l-main">
+
+      <p class="userName">
+        maayaさん
+        <br>
+        <span class="stampNum">
+          <span class="labelStampNum">獲得スタンプ数</span>
+          <span class="fs60per ls05">
+            <span class="fwBold fs150per">15</span>駅
+            /
+            144駅
+          </span>
+        </span>
+      </p>
+
+      <nav class="navMypageLocal">
+        <ul class="navMypageLocalList">
+          <li class="navMypageLocalListItem">
+            <a href="#allStations" class="btn colorWhite large transition alpha" data-scroll="">駅スタンプ一覧</a>
+          </li>
+          <li class="navMypageLocalListItem">
+            <a href="#prize" class="btn colorWhite large transition alpha" data-scroll="">達成賞</a>
+          </li>
+          <li class="navMypageLocalListItem">
+            <a href="#howto" class="btn colorWhite large transition alpha" data-scroll="">遊び方説明</a>
+          </li>
+          <li class="navMypageLocalListItem">
+            <a href="#posting" class="btn colorWhite large transition alpha" data-scroll=""><span><span class="displayInlineBlock">駅スタンプ</span><span class="displayInlineBlock">ポスター掲出駅</span></span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="boxWhite noBg" id="allStations">
+        <div class="w960">
+          <h3 class="titleImage hasBorder"><img src="/rally/src/all-stations/image/mypage/allStations_ttl.png" alt="駅スタンプ一覧"></h3>
+
+
+                      <div class="trainLine line1 js-accordion is-opened" rel="銀座線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">銀座線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent" style="display: block;">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter2" rel="渋谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/1/" class="stationButton unchecked transition alpha"><span>渋谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="表参道">
+
+                          <a href="/rally/all-stations/spot/detail/id/2/" class="stationButton unchecked transition alpha"><span>表参道</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="外苑前">
+
+                          <a href="/rally/all-stations/spot/detail/id/3/" class="stationButton unchecked transition alpha"><span>外苑前</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="青山一丁目">
+
+                          <a href="/rally/all-stations/spot/detail/id/4/" class="stationButton unchecked transition alpha"><span>青山一丁目</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="赤坂見附">
+
+                          <a href="/rally/all-stations/spot/checked/id/5/" class="stationButton checked transition alpha"><span>赤坂見附                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="溜池山王">
+
+                          <a href="/rally/all-stations/spot/checked/id/6/" class="stationButton checked transition alpha"><span>溜池山王                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="虎ノ門">
+
+                          <a href="/rally/all-stations/spot/detail/id/7/" class="stationButton unchecked transition alpha"><span>虎ノ門</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="新橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/8/" class="stationButton unchecked transition alpha"><span>新橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="銀座">
+
+                          <a href="/rally/all-stations/spot/checked/id/9/" class="stationButton checked transition alpha"><span>銀座                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="京橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/10/" class="stationButton unchecked transition alpha"><span>京橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="日本橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/11/" class="stationButton unchecked transition alpha"><span>日本橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="三越前">
+
+                          <a href="/rally/all-stations/spot/detail/id/12/" class="stationButton unchecked transition alpha"><span>三越前</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="神田">
+
+                          <a href="/rally/all-stations/spot/detail/id/13/" class="stationButton unchecked transition alpha"><span>神田</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="末広町">
+
+                          <a href="/rally/all-stations/spot/detail/id/14/" class="stationButton unchecked transition alpha"><span>末広町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="上野広小路">
+
+                          <a href="/rally/all-stations/spot/detail/id/15/" class="stationButton unchecked transition alpha"><span>上野広小路</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="上野">
+
+                          <a href="/rally/all-stations/spot/checked/id/16/" class="stationButton checked transition alpha"><span>上野                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="稲荷町">
+
+                          <a href="/rally/all-stations/spot/detail/id/17/" class="stationButton unchecked transition alpha"><span>稲荷町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="田原町">
+
+                          <a href="/rally/all-stations/spot/detail/id/18/" class="stationButton unchecked transition alpha"><span>田原町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="浅草">
+
+                          <a href="/rally/all-stations/spot/detail/id/19/" class="stationButton unchecked transition alpha"><span>浅草</span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+                      <div class="trainLine line2 js-accordion" rel="丸ノ内線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">丸ノ内線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter2" rel="荻窪">
+
+                          <a href="/rally/all-stations/spot/detail/id/20/" class="stationButton unchecked transition alpha"><span>荻窪</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="南阿佐ケ谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/21/" class="stationButton unchecked transition alpha"><span>南阿佐ケ谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="新高円寺">
+
+                          <a href="/rally/all-stations/spot/detail/id/22/" class="stationButton unchecked transition alpha"><span>新高円寺</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="東高円寺">
+
+                          <a href="/rally/all-stations/spot/detail/id/23/" class="stationButton unchecked transition alpha"><span>東高円寺</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="新中野">
+
+                          <a href="/rally/all-stations/spot/checked/id/24/" class="stationButton checked transition alpha"><span>新中野                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="中野坂上">
+
+                          <a href="/rally/all-stations/spot/checked/id/28/" class="stationButton checked transition alpha"><span>中野坂上                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="西新宿">
+
+                          <a href="/rally/all-stations/spot/checked/id/29/" class="stationButton checked transition alpha"><span>西新宿                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="新宿">
+
+                          <a href="/rally/all-stations/spot/checked/id/30/" class="stationButton checked transition alpha"><span>新宿                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="新宿三丁目">
+
+                          <a href="/rally/all-stations/spot/checked/id/31/" class="stationButton checked transition alpha"><span>新宿三丁目                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="新宿御苑前">
+
+                          <a href="/rally/all-stations/spot/checked/id/32/" class="stationButton checked transition alpha"><span>新宿御苑前                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="四谷三丁目">
+
+                          <a href="/rally/all-stations/spot/detail/id/33/" class="stationButton unchecked transition alpha"><span>四谷三丁目</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="四ツ谷">
+
+                          <a href="/rally/all-stations/spot/checked/id/34/" class="stationButton checked transition alpha"><span>四ツ谷                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="赤坂見附">
+
+                          <a href="/rally/all-stations/spot/checked/id/5/" class="stationButton checked transition alpha"><span>赤坂見附                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter6" rel="国会議事堂前">
+
+                          <a href="/rally/all-stations/spot/detail/id/36/" class="stationButton unchecked transition alpha"><span>国会議事堂前</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="霞ケ関">
+
+                          <a href="/rally/all-stations/spot/checked/id/37/" class="stationButton checked transition alpha"><span>霞ケ関                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="銀座">
+
+                          <a href="/rally/all-stations/spot/checked/id/9/" class="stationButton checked transition alpha"><span>銀座                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="東京">
+
+                          <a href="/rally/all-stations/spot/detail/id/39/" class="stationButton unchecked transition alpha"><span>東京</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="大手町">
+
+                          <a href="/rally/all-stations/spot/detail/id/40/" class="stationButton unchecked transition alpha"><span>大手町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="淡路町">
+
+                          <a href="/rally/all-stations/spot/detail/id/41/" class="stationButton unchecked transition alpha"><span>淡路町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="御茶ノ水">
+
+                          <a href="/rally/all-stations/spot/detail/id/42/" class="stationButton unchecked transition alpha"><span>御茶ノ水</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="本郷三丁目">
+
+                          <a href="/rally/all-stations/spot/detail/id/43/" class="stationButton unchecked transition alpha"><span>本郷三丁目</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="後楽園">
+
+                          <a href="/rally/all-stations/spot/detail/id/44/" class="stationButton unchecked transition alpha"><span>後楽園</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="茗荷谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/45/" class="stationButton unchecked transition alpha"><span>茗荷谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="新大塚">
+
+                          <a href="/rally/all-stations/spot/detail/id/46/" class="stationButton unchecked transition alpha"><span>新大塚</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="池袋">
+
+                          <a href="/rally/all-stations/spot/detail/id/47/" class="stationButton unchecked transition alpha"><span>池袋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="方南町">
+
+                          <a href="/rally/all-stations/spot/detail/id/25/" class="stationButton unchecked transition alpha"><span>方南町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter6" rel="中野富士見町">
+
+                          <a href="/rally/all-stations/spot/detail/id/26/" class="stationButton unchecked transition alpha"><span>中野富士見町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="中野新橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/27/" class="stationButton unchecked transition alpha"><span>中野新橋</span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+                      <div class="trainLine line3 js-accordion" rel="日比谷線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">日比谷線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter3" rel="中目黒">
+
+                          <a href="/rally/all-stations/spot/detail/id/48/" class="stationButton unchecked transition alpha"><span>中目黒</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="恵比寿">
+
+                          <a href="/rally/all-stations/spot/detail/id/49/" class="stationButton unchecked transition alpha"><span>恵比寿</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="広尾">
+
+                          <a href="/rally/all-stations/spot/detail/id/50/" class="stationButton unchecked transition alpha"><span>広尾</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="六本木">
+
+                          <a href="/rally/all-stations/spot/detail/id/51/" class="stationButton unchecked transition alpha"><span>六本木</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="神谷町">
+
+                          <a href="/rally/all-stations/spot/detail/id/52/" class="stationButton unchecked transition alpha"><span>神谷町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter6" rel="虎ノ門ヒルズ">
+
+                          <a href="/rally/all-stations/spot/detail/id/53/" class="stationButton unchecked transition alpha"><span>虎ノ門ヒルズ</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="霞ケ関">
+
+                          <a href="/rally/all-stations/spot/checked/id/37/" class="stationButton checked transition alpha"><span>霞ケ関                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="日比谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/55/" class="stationButton unchecked transition alpha"><span>日比谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="銀座">
+
+                          <a href="/rally/all-stations/spot/checked/id/9/" class="stationButton checked transition alpha"><span>銀座                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="東銀座">
+
+                          <a href="/rally/all-stations/spot/detail/id/57/" class="stationButton unchecked transition alpha"><span>東銀座</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="築地">
+
+                          <a href="/rally/all-stations/spot/detail/id/58/" class="stationButton unchecked transition alpha"><span>築地</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="八丁堀">
+
+                          <a href="/rally/all-stations/spot/detail/id/59/" class="stationButton unchecked transition alpha"><span>八丁堀</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="茅場町">
+
+                          <a href="/rally/all-stations/spot/detail/id/60/" class="stationButton unchecked transition alpha"><span>茅場町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="人形町">
+
+                          <a href="/rally/all-stations/spot/detail/id/61/" class="stationButton unchecked transition alpha"><span>人形町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="小伝馬町">
+
+                          <a href="/rally/all-stations/spot/detail/id/62/" class="stationButton unchecked transition alpha"><span>小伝馬町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="秋葉原">
+
+                          <a href="/rally/all-stations/spot/detail/id/63/" class="stationButton unchecked transition alpha"><span>秋葉原</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="仲御徒町">
+
+                          <a href="/rally/all-stations/spot/detail/id/64/" class="stationButton unchecked transition alpha"><span>仲御徒町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="上野">
+
+                          <a href="/rally/all-stations/spot/checked/id/16/" class="stationButton checked transition alpha"><span>上野                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="入谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/66/" class="stationButton unchecked transition alpha"><span>入谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="三ノ輪">
+
+                          <a href="/rally/all-stations/spot/detail/id/67/" class="stationButton unchecked transition alpha"><span>三ノ輪</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="南千住">
+
+                          <a href="/rally/all-stations/spot/detail/id/68/" class="stationButton unchecked transition alpha"><span>南千住</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="北千住">
+
+                          <a href="/rally/all-stations/spot/detail/id/69/" class="stationButton unchecked transition alpha"><span>北千住</span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+                      <div class="trainLine line4 js-accordion" rel="東西線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">東西線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter2" rel="中野">
+
+                          <a href="/rally/all-stations/spot/detail/id/70/" class="stationButton unchecked transition alpha"><span>中野</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="落合">
+
+                          <a href="/rally/all-stations/spot/detail/id/71/" class="stationButton unchecked transition alpha"><span>落合</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="高田馬場">
+
+                          <a href="/rally/all-stations/spot/detail/id/72/" class="stationButton unchecked transition alpha"><span>高田馬場</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="早稲田">
+
+                          <a href="/rally/all-stations/spot/detail/id/73/" class="stationButton unchecked transition alpha"><span>早稲田</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="神楽坂">
+
+                          <a href="/rally/all-stations/spot/detail/id/74/" class="stationButton unchecked transition alpha"><span>神楽坂</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="飯田橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/75/" class="stationButton unchecked transition alpha"><span>飯田橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="九段下">
+
+                          <a href="/rally/all-stations/spot/detail/id/76/" class="stationButton unchecked transition alpha"><span>九段下</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="竹橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/77/" class="stationButton unchecked transition alpha"><span>竹橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="大手町">
+
+                          <a href="/rally/all-stations/spot/detail/id/40/" class="stationButton unchecked transition alpha"><span>大手町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="日本橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/11/" class="stationButton unchecked transition alpha"><span>日本橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="茅場町">
+
+                          <a href="/rally/all-stations/spot/detail/id/60/" class="stationButton unchecked transition alpha"><span>茅場町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="門前仲町">
+
+                          <a href="/rally/all-stations/spot/detail/id/81/" class="stationButton unchecked transition alpha"><span>門前仲町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="木場">
+
+                          <a href="/rally/all-stations/spot/detail/id/82/" class="stationButton unchecked transition alpha"><span>木場</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="東陽町">
+
+                          <a href="/rally/all-stations/spot/detail/id/83/" class="stationButton unchecked transition alpha"><span>東陽町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="南砂町">
+
+                          <a href="/rally/all-stations/spot/detail/id/84/" class="stationButton unchecked transition alpha"><span>南砂町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="西葛西">
+
+                          <a href="/rally/all-stations/spot/detail/id/85/" class="stationButton unchecked transition alpha"><span>西葛西</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="葛西">
+
+                          <a href="/rally/all-stations/spot/detail/id/86/" class="stationButton unchecked transition alpha"><span>葛西</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="浦安">
+
+                          <a href="/rally/all-stations/spot/detail/id/87/" class="stationButton unchecked transition alpha"><span>浦安</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="南行徳">
+
+                          <a href="/rally/all-stations/spot/detail/id/88/" class="stationButton unchecked transition alpha"><span>南行徳</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="行徳">
+
+                          <a href="/rally/all-stations/spot/detail/id/89/" class="stationButton unchecked transition alpha"><span>行徳</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="妙典">
+
+                          <a href="/rally/all-stations/spot/detail/id/90/" class="stationButton unchecked transition alpha"><span>妙典</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="原木中山">
+
+                          <a href="/rally/all-stations/spot/detail/id/91/" class="stationButton unchecked transition alpha"><span>原木中山</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="西船橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/92/" class="stationButton unchecked transition alpha"><span>西船橋</span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+                      <div class="trainLine line5 js-accordion" rel="千代田線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">千代田線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter5" rel="代々木上原">
+
+                          <a href="/rally/all-stations/spot/detail/id/93/" class="stationButton unchecked transition alpha"><span>代々木上原</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="代々木公園">
+
+                          <a href="/rally/all-stations/spot/detail/id/94/" class="stationButton unchecked transition alpha"><span>代々木公園</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter9" rel="明治神宮前〈原宿〉">
+
+                          <a href="/rally/all-stations/spot/detail/id/95/" class="stationButton unchecked transition alpha"><span>明治神宮前〈原宿〉</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="表参道">
+
+                          <a href="/rally/all-stations/spot/detail/id/2/" class="stationButton unchecked transition alpha"><span>表参道</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="乃木坂">
+
+                          <a href="/rally/all-stations/spot/detail/id/97/" class="stationButton unchecked transition alpha"><span>乃木坂</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="赤坂">
+
+                          <a href="/rally/all-stations/spot/detail/id/98/" class="stationButton unchecked transition alpha"><span>赤坂</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter6" rel="国会議事堂前">
+
+                          <a href="/rally/all-stations/spot/detail/id/36/" class="stationButton unchecked transition alpha"><span>国会議事堂前</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="霞ケ関">
+
+                          <a href="/rally/all-stations/spot/checked/id/37/" class="stationButton checked transition alpha"><span>霞ケ関                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="日比谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/55/" class="stationButton unchecked transition alpha"><span>日比谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter9" rel="二重橋前〈丸の内〉">
+
+                          <a href="/rally/all-stations/spot/detail/id/102/" class="stationButton unchecked transition alpha"><span>二重橋前〈丸の内〉</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="大手町">
+
+                          <a href="/rally/all-stations/spot/detail/id/40/" class="stationButton unchecked transition alpha"><span>大手町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="新御茶ノ水">
+
+                          <a href="/rally/all-stations/spot/detail/id/104/" class="stationButton unchecked transition alpha"><span>新御茶ノ水</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="湯島">
+
+                          <a href="/rally/all-stations/spot/detail/id/105/" class="stationButton unchecked transition alpha"><span>湯島</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="根津">
+
+                          <a href="/rally/all-stations/spot/detail/id/106/" class="stationButton unchecked transition alpha"><span>根津</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="千駄木">
+
+                          <a href="/rally/all-stations/spot/detail/id/107/" class="stationButton unchecked transition alpha"><span>千駄木</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="西日暮里">
+
+                          <a href="/rally/all-stations/spot/detail/id/108/" class="stationButton unchecked transition alpha"><span>西日暮里</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="町屋">
+
+                          <a href="/rally/all-stations/spot/detail/id/109/" class="stationButton unchecked transition alpha"><span>町屋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="北千住">
+
+                          <a href="/rally/all-stations/spot/detail/id/69/" class="stationButton unchecked transition alpha"><span>北千住</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="綾瀬">
+
+                          <a href="/rally/all-stations/spot/detail/id/111/" class="stationButton unchecked transition alpha"><span>綾瀬</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="北綾瀬">
+
+                          <a href="/rally/all-stations/spot/detail/id/112/" class="stationButton unchecked transition alpha"><span>北綾瀬</span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+                      <div class="trainLine line6 js-accordion" rel="有楽町線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">有楽町線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter3" rel="和光市">
+
+                          <a href="/rally/all-stations/spot/detail/id/113/" class="stationButton unchecked transition alpha"><span>和光市</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="地下鉄成増">
+
+                          <a href="/rally/all-stations/spot/detail/id/114/" class="stationButton unchecked transition alpha"><span>地下鉄成増</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="地下鉄赤塚">
+
+                          <a href="/rally/all-stations/spot/detail/id/115/" class="stationButton unchecked transition alpha"><span>地下鉄赤塚</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="平和台">
+
+                          <a href="/rally/all-stations/spot/detail/id/116/" class="stationButton unchecked transition alpha"><span>平和台</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="氷川台">
+
+                          <a href="/rally/all-stations/spot/detail/id/117/" class="stationButton unchecked transition alpha"><span>氷川台</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="小竹向原">
+
+                          <a href="/rally/all-stations/spot/detail/id/118/" class="stationButton unchecked transition alpha"><span>小竹向原</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="千川">
+
+                          <a href="/rally/all-stations/spot/detail/id/119/" class="stationButton unchecked transition alpha"><span>千川</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="要町">
+
+                          <a href="/rally/all-stations/spot/detail/id/120/" class="stationButton unchecked transition alpha"><span>要町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="池袋">
+
+                          <a href="/rally/all-stations/spot/detail/id/47/" class="stationButton unchecked transition alpha"><span>池袋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="東池袋">
+
+                          <a href="/rally/all-stations/spot/detail/id/122/" class="stationButton unchecked transition alpha"><span>東池袋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="護国寺">
+
+                          <a href="/rally/all-stations/spot/detail/id/123/" class="stationButton unchecked transition alpha"><span>護国寺</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="江戸川橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/124/" class="stationButton unchecked transition alpha"><span>江戸川橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="飯田橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/75/" class="stationButton unchecked transition alpha"><span>飯田橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="市ケ谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/126/" class="stationButton unchecked transition alpha"><span>市ケ谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="麴町">
+
+                          <a href="/rally/all-stations/spot/detail/id/127/" class="stationButton unchecked transition alpha"><span>麴町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="永田町">
+
+                          <a href="/rally/all-stations/spot/checked/id/128/" class="stationButton checked transition alpha"><span>永田町                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="桜田門">
+
+                          <a href="/rally/all-stations/spot/detail/id/129/" class="stationButton unchecked transition alpha"><span>桜田門</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="有楽町">
+
+                          <a href="/rally/all-stations/spot/detail/id/130/" class="stationButton unchecked transition alpha"><span>有楽町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="銀座一丁目">
+
+                          <a href="/rally/all-stations/spot/checked/id/131/" class="stationButton checked transition alpha"><span>銀座一丁目                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="新富町">
+
+                          <a href="/rally/all-stations/spot/detail/id/132/" class="stationButton unchecked transition alpha"><span>新富町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="月島">
+
+                          <a href="/rally/all-stations/spot/detail/id/133/" class="stationButton unchecked transition alpha"><span>月島</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="豊洲">
+
+                          <a href="/rally/all-stations/spot/detail/id/134/" class="stationButton unchecked transition alpha"><span>豊洲</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="辰巳">
+
+                          <a href="/rally/all-stations/spot/detail/id/135/" class="stationButton unchecked transition alpha"><span>辰巳</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="新木場">
+
+                          <a href="/rally/all-stations/spot/checked/id/136/" class="stationButton checked transition alpha"><span>新木場                          </span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+                      <div class="trainLine line7 js-accordion" rel="半蔵門線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">半蔵門線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter2" rel="渋谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/1/" class="stationButton unchecked transition alpha"><span>渋谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="表参道">
+
+                          <a href="/rally/all-stations/spot/detail/id/2/" class="stationButton unchecked transition alpha"><span>表参道</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="青山一丁目">
+
+                          <a href="/rally/all-stations/spot/detail/id/4/" class="stationButton unchecked transition alpha"><span>青山一丁目</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="永田町">
+
+                          <a href="/rally/all-stations/spot/checked/id/128/" class="stationButton checked transition alpha"><span>永田町                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="半蔵門">
+
+                          <a href="/rally/all-stations/spot/detail/id/141/" class="stationButton unchecked transition alpha"><span>半蔵門</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="九段下">
+
+                          <a href="/rally/all-stations/spot/detail/id/76/" class="stationButton unchecked transition alpha"><span>九段下</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="神保町">
+
+                          <a href="/rally/all-stations/spot/detail/id/143/" class="stationButton unchecked transition alpha"><span>神保町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="大手町">
+
+                          <a href="/rally/all-stations/spot/detail/id/40/" class="stationButton unchecked transition alpha"><span>大手町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="三越前">
+
+                          <a href="/rally/all-stations/spot/detail/id/12/" class="stationButton unchecked transition alpha"><span>三越前</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="水天宮前">
+
+                          <a href="/rally/all-stations/spot/detail/id/146/" class="stationButton unchecked transition alpha"><span>水天宮前</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="清澄白河">
+
+                          <a href="/rally/all-stations/spot/detail/id/147/" class="stationButton unchecked transition alpha"><span>清澄白河</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="住吉">
+
+                          <a href="/rally/all-stations/spot/detail/id/148/" class="stationButton unchecked transition alpha"><span>住吉</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="錦糸町">
+
+                          <a href="/rally/all-stations/spot/detail/id/149/" class="stationButton unchecked transition alpha"><span>錦糸町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter11" rel="押上〈スカイツリー前〉">
+
+                          <a href="/rally/all-stations/spot/detail/id/150/" class="stationButton unchecked transition alpha"><span>押上〈スカイツリー前〉</span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+                      <div class="trainLine line8 js-accordion" rel="南北線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">南北線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter2" rel="目黒">
+
+                          <a href="/rally/all-stations/spot/detail/id/151/" class="stationButton unchecked transition alpha"><span>目黒</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="白金台">
+
+                          <a href="/rally/all-stations/spot/detail/id/152/" class="stationButton unchecked transition alpha"><span>白金台</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="白金高輪">
+
+                          <a href="/rally/all-stations/spot/detail/id/153/" class="stationButton unchecked transition alpha"><span>白金高輪</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="麻布十番">
+
+                          <a href="/rally/all-stations/spot/detail/id/154/" class="stationButton unchecked transition alpha"><span>麻布十番</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter6" rel="六本木一丁目">
+
+                          <a href="/rally/all-stations/spot/detail/id/155/" class="stationButton unchecked transition alpha"><span>六本木一丁目</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="溜池山王">
+
+                          <a href="/rally/all-stations/spot/checked/id/6/" class="stationButton checked transition alpha"><span>溜池山王                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="永田町">
+
+                          <a href="/rally/all-stations/spot/checked/id/128/" class="stationButton checked transition alpha"><span>永田町                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="四ツ谷">
+
+                          <a href="/rally/all-stations/spot/checked/id/34/" class="stationButton checked transition alpha"><span>四ツ谷                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="市ケ谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/126/" class="stationButton unchecked transition alpha"><span>市ケ谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="飯田橋">
+
+                          <a href="/rally/all-stations/spot/detail/id/75/" class="stationButton unchecked transition alpha"><span>飯田橋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="後楽園">
+
+                          <a href="/rally/all-stations/spot/detail/id/44/" class="stationButton unchecked transition alpha"><span>後楽園</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="東大前">
+
+                          <a href="/rally/all-stations/spot/detail/id/162/" class="stationButton unchecked transition alpha"><span>東大前</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="本駒込">
+
+                          <a href="/rally/all-stations/spot/detail/id/163/" class="stationButton unchecked transition alpha"><span>本駒込</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="駒込">
+
+                          <a href="/rally/all-stations/spot/detail/id/164/" class="stationButton unchecked transition alpha"><span>駒込</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="西ケ原">
+
+                          <a href="/rally/all-stations/spot/detail/id/165/" class="stationButton unchecked transition alpha"><span>西ケ原</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="王子">
+
+                          <a href="/rally/all-stations/spot/detail/id/166/" class="stationButton unchecked transition alpha"><span>王子</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="王子神谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/167/" class="stationButton unchecked transition alpha"><span>王子神谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="志茂">
+
+                          <a href="/rally/all-stations/spot/detail/id/168/" class="stationButton unchecked transition alpha"><span>志茂</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="赤羽岩淵">
+
+                          <a href="/rally/all-stations/spot/detail/id/169/" class="stationButton unchecked transition alpha"><span>赤羽岩淵</span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+                      <div class="trainLine line9 js-accordion" rel="副都心線">
+              <h4 class="trainLineName js-accordionTrigger">
+                <span class="name">副都心線</span>
+                              </h4>
+
+              <div class="trainLineContent js-accordionContent">
+                <div class="trainLineContentInner">
+                  <ul class="listStation">
+                                          <li class="listStationItem letter3" rel="和光市">
+
+                          <a href="/rally/all-stations/spot/detail/id/113/" class="stationButton unchecked transition alpha"><span>和光市</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="地下鉄成増">
+
+                          <a href="/rally/all-stations/spot/detail/id/114/" class="stationButton unchecked transition alpha"><span>地下鉄成増</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="地下鉄赤塚">
+
+                          <a href="/rally/all-stations/spot/detail/id/115/" class="stationButton unchecked transition alpha"><span>地下鉄赤塚</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="平和台">
+
+                          <a href="/rally/all-stations/spot/detail/id/116/" class="stationButton unchecked transition alpha"><span>平和台</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="氷川台">
+
+                          <a href="/rally/all-stations/spot/detail/id/117/" class="stationButton unchecked transition alpha"><span>氷川台</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="小竹向原">
+
+                          <a href="/rally/all-stations/spot/detail/id/118/" class="stationButton unchecked transition alpha"><span>小竹向原</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="千川">
+
+                          <a href="/rally/all-stations/spot/detail/id/119/" class="stationButton unchecked transition alpha"><span>千川</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="要町">
+
+                          <a href="/rally/all-stations/spot/detail/id/120/" class="stationButton unchecked transition alpha"><span>要町</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="池袋">
+
+                          <a href="/rally/all-stations/spot/detail/id/47/" class="stationButton unchecked transition alpha"><span>池袋</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="雑司が谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/174/" class="stationButton unchecked transition alpha"><span>雑司が谷</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter4" rel="西早稲田">
+
+                          <a href="/rally/all-stations/spot/detail/id/175/" class="stationButton unchecked transition alpha"><span>西早稲田</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="東新宿">
+
+                          <a href="/rally/all-stations/spot/detail/id/176/" class="stationButton unchecked transition alpha"><span>東新宿</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter5" rel="新宿三丁目">
+
+                          <a href="/rally/all-stations/spot/checked/id/31/" class="stationButton checked transition alpha"><span>新宿三丁目                          </span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter3" rel="北参道">
+
+                          <a href="/rally/all-stations/spot/detail/id/178/" class="stationButton unchecked transition alpha"><span>北参道</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter9" rel="明治神宮前〈原宿〉">
+
+                          <a href="/rally/all-stations/spot/detail/id/95/" class="stationButton unchecked transition alpha"><span>明治神宮前〈原宿〉</span></a>
+
+                                              </li>
+                                          <li class="listStationItem letter2" rel="渋谷">
+
+                          <a href="/rally/all-stations/spot/detail/id/1/" class="stationButton unchecked transition alpha"><span>渋谷</span></a>
+
+                                              </li>
+                                      </ul>
+                                    <div class="trainLineContentClose js-accordionClose"></div>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+      </section>
+
+      <section class="boxWhite spBorderBottom" id="prize">
+        <div class="w960">
+          <h3 class="titleImage"><img src="/rally/src/all-stations/image/mypage/prize_ttl.png" alt="達成賞"></h3>
+          <div class="achievePrize">
+            <div class="boxAchievePrize">
+              <h4 class="boxAchievePrizeTitle"><img src="/rally/src/all-stations/image/mypage/icon_prize.png" alt="賞"><span>6駅達成賞</span></h4>
+              <p class="boxAchievePrizeText">
+                <span class="fwBold">【達成条件】</span><br>
+                ６駅分の駅スタンプを取得された方<br>
+                <span class="fwBold">【達成賞】</span><br>
+                ６駅達成賞デジタル壁紙
+              </p>
+
+                              <p class="prizeButton pt20">
+                  <a href="/rally/all-stations/prize/six-spot" class="transition alpha"><img src="/rally/src/all-stations/image/mypage/prize_6station.png" alt="6駅達成賞"></a>
+                </p>
+                          </div>
+            <div class="boxAchievePrize">
+              <h4 class="boxAchievePrizeTitle"><img src="/rally/src/all-stations/image/mypage/icon_prize.png" alt="賞"><span>路線達成賞</span></h4>
+              <p class="boxAchievePrizeText">
+                <span class="fwBold">【達成条件】</span><br>
+                各路線ごとすべての駅スタンプを取得された方<br>
+                <span class="fwBold">【達成賞】</span><br>
+                路線達成賞デジタル壁紙＆デジタル路線マイスター認定証
+              </p>
+
+
+            </div>
+            <div class="boxAchievePrize">
+              <h4 class="boxAchievePrizeTitle"><img src="/rally/src/all-stations/image/mypage/icon_prize.png" alt="賞"><span>全駅達成賞</span></h4>
+              <p class="boxAchievePrizeText">
+                <span class="fwBold">【達成条件】</span><br>
+                東京メトロ全駅の駅スタンプを取得された方<br>
+                <span class="fwBold">【達成賞】</span><br>
+                東京メトロ全駅達成賞デジタル壁紙＆デジタル全駅マイスター認定証
+              </p>
+                          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="boxWhite spBorderBottom" id="howto">
+        <div class="w960">
+          <h3 class="titleImage"><img src="/rally/src/all-stations/image/mypage/howtoplay_ttl.png" alt="遊び方説明"></h3>
+          <dl class="introList">
+            <div class="introListItem">
+              <dt class="introListTitle fs24 fs20sp fwBold mb5">デジタルスタンプを取得しよう！</dt>
+              <dd class="introListContent">
+                <div class="mb20 fs18 fs14sp">
+                  <p>
+                    東京メトロ各駅に掲出されている駅スタンプポスターのQRコードを読み取り、駅スタンプを取得！
+                  </p>
+                  <p class="fs14 fs12sp">
+                    ※駅スタンプポスターの掲出箇所は「駅スタンプ一覧」にてご確認ください。
+                  </p>
+                </div>
+
+                <dl class="boxHowGetStamp">
+                  <dt class="boxHowGetStampTitle">
+                    <div class="boxHowGetStampTitleInner">
+                      <figure class="image">
+                        <img src="/rally/src/all-stations/image/common/illust_qr.png" alt="">
+                      </figure>
+                      <span class="text">QRコード読取方法</span>
+                    </div>
+                  </dt>
+                  <dd class="boxHowGetStampContent">
+
+                    <div class="boxHowGetStampContentExplain">
+                      <div class="boxHowGetStampContentExplainInner">
+                        <p class="text">ラリー専用サイトにログインの上、対象駅に掲出されているQRコードを<br class="displayPc">QRコードリーダーで読み込んでください。</p>
+                      </div>
+                    </div>
+                    <div class="boxHowGetStampContentNotice">
+                      <div class="boxHowGetStampContentNoticeInner">
+                        <p class="textLead"><i class="fas fa-exclamation-triangle"></i> スタンプの取得ができない場合は下記をご確認ください。</p>
+                        <ul class="disc">
+                          <li>ネット環境に問題ないかご確認ください。</li>
+                          <li>QRコードリーダーアプリ内のブラウザになっていないかご確認ください。<br>ラリーマイページへログイン済みのブラウザでなければスタンプを取得できません。</li>
+                          <li>QRコードが正しく読み取れているかご確認ください。<br>反射やぼけ等でQRのURL情報が欠落している場合がございます。その場合はQRコードを読み込み直してください。</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+
+                <dl class="boxStationWithGPS hasBorder">
+                  <dt class="boxStationWithGPSTitle">GPS取得を伴う駅</dt>
+                  <dd class="boxStationWithGPSContent">
+
+                    <ul class="boxStationWithGPSContentSpotList">
+                      <li class="boxStationWithGPSContentSpotListItem">東西線「浦安駅」</li>
+                      <li class="boxStationWithGPSContentSpotListItem">千代田線「綾瀬駅」</li>
+                      <li class="boxStationWithGPSContentSpotListItem">有楽町線「新木場駅」</li>
+                    </ul>
+
+                    <dl class="boxHowGetStamp">
+                      <dt class="boxHowGetStampTitle">
+                        <div class="boxHowGetStampTitleInner">
+                          <figure class="image">
+                            <img src="/rally/src/all-stations/image/common/illust_gps.png" alt="">
+                          </figure>
+                          <span class="text">GPS取得方法</span>
+                        </div>
+                      </dt>
+                      <dd class="boxHowGetStampContent">
+
+                        <div class="boxHowGetStampContentExplain">
+                          <div class="boxHowGetStampContentExplainInner">
+                            <p class="text">対象駅を訪れて、掲示されているポスターのQRコードを読み込んでください。<br class="displayPc">GPS情報を取得して位置の確認を行います。</p>
+                          </div>
+                        </div>
+                        <div class="boxHowGetStampContentNotice">
+                          <div class="boxHowGetStampContentNoticeInner">
+                            <p class="textLead"><i class="fas fa-exclamation-triangle"></i> GPS情報の取得ができない場合は下記をご確認ください。</p>
+                            <ul class="disc">
+                              <li>ネット環境に問題ないかご確認ください。</li>
+                              <li>ご利用の端末およびブラウザのGPSの設定をご確認ください。</li>
+                              <!-- <li>場所を変えて、再度スポットページを読み込んでください。</li> -->
+                            </ul>
+                          </div>
+                        </div>
+                        <p class="pt10 fcError fwBold fs12 lh14 txtCenter">※歩きながらのスマートフォンの操作は大変危険ですので、おやめください。</p>
+
+                      </dd>
+                    </dl>
+
+                  </dd>
+                </dl>
+
+                <!-- <dl class="boxHowGetStampWrap">
+
+                  <div class="boxHowGetStamp">
+                    <dt class="boxHowGetStampTitle">QRコード読取方式スポット</dt>
+                    <dd class="boxHowGetStampContent">
+
+                      <ul class="boxHowGetStampContentSpotList column2">
+                        <li class="boxHowGetStampContentSpotListItem shiga w100">滋賀県情報発信拠点「ここ滋賀」</li>
+                        <li class="boxHowGetStampContentSpotListItem">上野駅</li>
+                        <li class="boxHowGetStampContentSpotListItem">国会議事堂前駅</li>
+                        <li class="boxHowGetStampContentSpotListItem">護国寺駅</li>
+                        <li class="boxHowGetStampContentSpotListItem">日本橋駅</li>
+                      </ul>
+
+                      <div class="boxHowGetStampContentExplain">
+                        <figure class="image">
+                          <img src="/rally/src/metroshigarally/image/mypage/illust_qr.png" alt="">
+                        </figure>
+                        <p class="text">対象スポットに掲出されているQRコードを、<br class="displayPc">QRコードリーダーで読み込んでください。</p>
+                      </div>
+                      <div class="boxHowGetStampContentNotice">
+                        <p class="textLead">取得できない場合は下記をご確認ください。</p>
+                        <ul class="disc">
+                          <li>ネット環境に問題ないかご確認ください。</li>
+                          <li>QRコードリーダーアプリ内のブラウザになっていないかご確認ください。<br>
+                          ラリーマイページへログイン済みのブラウザでなければスタンプを取得できません。</li>
+                          <li>QRコードが正しく読み取れているかご確認ください。<br>反射やぼけ等でQRのURL情報が欠落している場合がございます。その場合はQRコードを読み込み直してください。</li>
+                        </ul>
+                      </div>
+
+                    </dd>
+                  </div>
+
+                </dl> -->
+
+              </dd>
+            </div>
+            <div class="introListItem">
+              <dt class="introListTitle fs24 fs20sp fwBold mb5">達成賞をゲットしよう！</dt>
+              <dd class="introListContent">
+                <p class="fs18 fs14sp">
+                  集めた駅スタンプの数に応じて、オリジナル壁紙やデジタルマイスター認定証をGETしよう！
+                </p>
+                <p class="fs14 fs12sp">
+                  ※達成条件を満たすと、各達成賞のダウンロードボタンが表示されます。
+                </p>
+              </dd>
+            </div>
+            <div class="introListItem">
+              <dt class="introListTitle fs24 fs20sp fwBold mb5">東京メトロシークレットツアーに応募しよう！</dt>
+              <dd class="introListContent fs18 fs14sp">
+                <p class="fs18 fs14sp">
+                  東京メトロすべての駅スタンプを集めて、東京メトロシークレットツアーに応募しよう！
+                </p>
+                <p class="fs14 fs12sp">
+                  ※達成条件を満たすと、応募フォームへのボタンが表示されます。
+                </p>
+              </dd>
+            </div>
+          </dl>
+
+        </div>
+      </section>
+
+      <section class="boxWhite" id="posting">
+        <h3 class="titleImage"><img src="/rally/src/all-stations/image/index/station_ttl.png" alt="駅スタンプポスター掲出駅"></h3>
+
+        <p class="fs50 fs26sp fwBlack txtCenter mb20">東京メトロ全駅</p>
+
+        <div class="stationNotice">
+          <div class="stationNotice1">
+            <h4 class="titleContent mb20i">掲出駅のお知らせ</h4>
+            <p class="txtCenter txtLeftSp fwBold">
+              中目黒駅、中野駅、西船橋駅、代々木上原駅、和光市駅及び目黒駅の駅スタンプポスターについては<br class="displayPc">それぞれひとつ手前の駅に掲出してあります。
+            </p>
+          </div>
+          <div class="stationNotice2">
+            <h6 class="mb10">【対象駅】</h6>
+            <ul class="mb10i">
+              <li>日比谷線「中目黒駅」→「恵比寿駅」に掲出</li>
+              <li>東西線「中野駅」→「落合駅」に掲出</li>
+              <li>東西線「西船橋駅」→「原木中山駅」に掲出</li>
+              <li>千代田線「代々木上原駅」→「代々木公園駅」に掲出</li>
+              <li>有楽町線「和光市駅」→「地下鉄成増駅」に掲出</li>
+              <li>南北線「目黒駅」→「白金台駅」に掲出</li>
+            </ul>
+            <p class="fs14 fs12sp txtLeftSp">※各駅の駅スタンプポスター掲出箇所については、「駅スタンプ一覧」をご確認ください。
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+
+    </div><!-- End [div id="main" class="l-main"] -->
+  </div><!-- End [div id="contents" class="l-contents"] -->
+
+  <div class="boxFooterButtons hasBorder">
+      <p class="boxFooterButtonsItem">
+      <a href="/rally/all-stations/profile/" class="btn colorWhite widthFixed transition alpha">登録情報変更はこちら</a>
+    </p>
+    </div>
+  <!-- all-stations/footer -->
+
+  <footer class="l-footer" id="footer">
+    <div class="footBanner">
+      <p>
+        <a href="/rally/machimeguri2022/" class="alpha transition">
+          <img src="/rally/src/all-stations/image/common/banner_machimeguri2022_pc.jpg" alt="2022年度 メトロ 街めぐりスタンプラリー" class="displayPc">
+          <img src="/rally/src/all-stations/image/common/banner_machimeguri2022_sp.jpg" alt="2022年度 メトロ 街めぐりスタンプラリー" class="displaySp">
+        </a>
+      </p>
+    </div>
+    <div class="footerInner">
+      <div class="footerLeft">
+        <p>詳しくは、ご登録いただいた東京メトロ全駅スタンプラリー専用ページ、または東京メトロホームページをご覧ください。</p>
+        <p class="bold">《お問い合わせ》東京メトロお客様センター　<br class="displaySp"><img src="/rally/src/all-stations/image/common/freedial.png" alt="フリーダイアル" class="footerFreeDial"> 0120-104-106（年中無休9:00〜17:00）</p>
+      </div>
+      <div class="footerRight">
+        <p class="">
+          <a href="https://www.tokyometro.jp/index.html" target="_blank" class="alpha transition">
+            <img src="/rally/src/all-stations/image/common/footer_tokyo_metro.png" width="90" alt="東京メトロ">
+          </a>
+        </p>
+        <p class="">
+          <img src="/rally/src/machimeguri2022/image/common/footer_city_tourism.png" width="66" alt="City Tourism">
+        </p>
+      </div>
+    </div>
+    <address>Copyright © Tokyo Metro Co., Ltd All rights reserved.</address>
+  </footer>
+
+  <div class="pagetop" id="js-pagetop" style="display: block;">
+    <p><a href="#top" data-scroll="" class="alpha transition">
+    <img src="/rally/src/all-stations/image/common/pagetop.png" alt="ページのトップに戻る">
+    </a></p>
+  </div>
+
+</div><!-- End [div id="container"] -->
+
+<!-- Begin JavaScripts (Load JavaScripts at bottom, this will reduce page load time) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<!-- <script src="https://use.fontawesome.com/e23a7d2c57.js"></script> -->
+<script src="/rally/script/jquery.crea.smoothscroll.js"></script>
+<script src="/rally/script/utility.js"></script>
+<script src="/rally/script/all-stations/init.js?1655525594"></script>
+<script src="/rally/script/all-stations/contents.js?1655525594"></script>
+
+
+
+<div id="js-breakpointChecker"><div class="wide"></div><div class="medium"></div><div class="narrow"></div></div></body></html>
