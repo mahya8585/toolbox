@@ -9,3 +9,4 @@ build
 py/scraping/localCloudCredit/target.html
 
 node_modules
+py/scraping/metro/poster-place.csv
