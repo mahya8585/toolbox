@@ -45,6 +45,23 @@ def extract_poster_place(st_page):
     return poster_place.replace('・', '').strip()
 
 
+def extract_inout(place):
+    inside = "改札内"
+    outside = "改札外"
+
+    inout = ""
+
+    if inside in place:
+        inout = inside
+
+    if outside in place:
+        if inout != "":
+            inout = inout + ","
+
+        inout = inout + outside
+
+    return inout
+
 def create_poster_place_csv():
     """WEBサイトログインし、駅のポスター情報を取得する。CSVに吐き出す。
     """
@@ -75,7 +92,10 @@ def create_poster_place_csv():
                 driver.get(site_domain + st_url.replace('checked', 'detail'))
                 place_text = extract_poster_place(driver.page_source)
 
-                writer.writerow([l_name, st_name, place_text, site_domain + st_url])
+                # 改札内外情報
+                inout_text = extract_inout(place_text)
+
+                writer.writerow([l_name, st_name, place_text, inout_text, site_domain + st_url])
 
     driver.close()
 

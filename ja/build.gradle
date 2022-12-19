@@ -10,10 +10,13 @@ repositories {
 }
 
 dependencies {
-    compile 'org.apache.tika:tika-parsers:1.23'
-    compile group: 'org.apache.xmlgraphics', name: 'batik-all', version: '1.13'
+    compile 'org.apache.tika:tika-parsers:2.3.0'
+    compile 'org.apache.xmlgraphics:batik-all:1.14'
 
-    testCompile 'junit:junit:4.12'
+    implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.19.0'
+
+
+    testCompile 'junit:junit:4.13.2'
 
 }
 
