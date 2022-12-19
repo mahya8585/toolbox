@@ -62,6 +62,7 @@ def extract_inout(place):
 
     return inout
 
+
 def create_poster_place_csv():
     """WEBサイトログインし、駅のポスター情報を取得する。CSVに吐き出す。
     """
@@ -96,6 +97,8 @@ def create_poster_place_csv():
                 inout_text = extract_inout(place_text)
 
                 writer.writerow([l_name, st_name, place_text, inout_text, site_domain + st_url])
+                # マッピング用
+                # writer.writerow([l_name, st_name + "駅", place_text, inout_text, site_domain + st_url])
 
     driver.close()
 
@@ -113,4 +116,3 @@ with open(html_main, 'r', encoding='utf8') as hf:
 create_poster_place_csv()
 
 print('function end.')
-
