@@ -27,7 +27,7 @@ for image in os.listdir(img_dir):
     img_path = os.path.join(img_dir, image)
     im = Image.open(img_path)
 
-    exif = im._getexif()
+    exif = im._getexif() # type: ignore
     orientation = exif.get(0x112, 1)
 
     convert_img = convert_image[orientation](im)
