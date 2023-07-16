@@ -8,12 +8,13 @@ def extract_name(web_page):
     """
     # とりあえずhtml_parserで回すよー
     page_soup = BeautifulSoup(web_page.text, 'html.parser')
-    azure_services = page_soup.find_all('h3', class_='text-heading5')
+    azure_services = page_soup.select('h3[class="h5"]')
 
     service_names = []
     for service_obj in azure_services:
-        service_name = service_obj.find('span')
-        result_name = service_name.text.replace('プレビュー', '')
+        service_name_link = service_obj.find('a')
+        service_name = service_name_link.find('span')
+        result_name = service_name.text.replace('ᴾᴿᴱⱽᴵᴱᵂ', '')
         service_names.append(result_name)
 
     print('全サービス数 : ' + str(len(service_names)))
