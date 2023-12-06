@@ -1,3 +1,4 @@
 pypdf
-pdfminer
 chardet
+pdfminer.six
+#pdfminer
