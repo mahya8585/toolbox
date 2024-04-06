@@ -5,6 +5,7 @@ out/
 
 build.gradle
 build
+ja/bin/
 
 py/scraping/localCloudCredit/target.html
 
