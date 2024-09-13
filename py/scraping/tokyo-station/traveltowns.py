@@ -49,6 +49,9 @@ def create_stations_db(stations: list):
     # 駅名をKVSに保存
     for station_name in stations:
         conn.set(station_name, '')
+        # 未達成セットの登録(初期化用)
+        conn.sadd('unachieved', station_name)
+
 
 
 # メイン処理ここから
