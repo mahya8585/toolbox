@@ -8,6 +8,9 @@ build
 ja/bin/
 
 py/scraping/localCloudCredit/target.html
+py/scraping/__pycache__
+py/scraping/maff/__pycache__
+py/.vscode
 
 node_modules
 py/scraping/metro/poster-place.csv
