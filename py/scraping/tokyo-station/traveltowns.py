@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import redis
+import os
+
+HOST_NAME = os.environ['HOST_NAME']
+ACCESS_KEY = os.environ['PASSWORD']
 
 
 def scraping_tokyo_stations(html: str):
@@ -37,12 +41,12 @@ def create_stations_db(stations: list):
     Args:
         stations (list): 駅名のリスト
     """
-    # Azure cache for Redis に接続
+    # DB接続
     conn = redis.StrictRedis(
-        host='HOST_NAME',
+        host=HOST_NAME,
         port=6380,
         db=0,
-        password='ACCESS_KEY',
+        password=ACCESS_KEY,
         ssl=True
     )
 
