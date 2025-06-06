@@ -3,20 +3,20 @@ version '0.1'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.11
+sourceCompatibility = 1.21
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'org.apache.tika:tika-parsers:2.3.0'
-    compile 'org.apache.xmlgraphics:batik-all:1.14'
-
+    implementation 'org.apache.tika:tika-parsers:2.3.0'
+    implementation 'org.apache.xmlgraphics:batik-all:1.14'
+    implementation 'org.apache.lucene:lucene-core:10.2.1'
     implementation 'com.microsoft.cognitiveservices.speech:client-sdk:1.19.0'
 
 
-    testCompile 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.13.2'
 
 }
 
