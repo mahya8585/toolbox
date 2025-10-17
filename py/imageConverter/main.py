@@ -34,9 +34,11 @@ def file_convert(directory: Path, output_directory: Path) -> None:
                     print(f"  - {file.name}")
 
                     # SVGをPNGに変換
-                    convert_svg_to_png(str(directory.joinpath(item.name, file.name)), str(output_directory.joinpath(file.name)))
+                    output_file_name = file.name.replace(".svg", ".png")
+                    convert_svg_to_png(str(directory.joinpath(item.name, file.name)), str(output_directory.joinpath(output_file_name)))
             else:
                 print(item.name)
+
                 # SVGをPNGに変換
                 convert_svg_to_png(str(directory.joinpath(item.name)), str(output_directory.joinpath(item.name)))
 
