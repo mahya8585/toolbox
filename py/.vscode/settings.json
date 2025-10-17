@@ -1,4 +1,10 @@
 {
     "python.analysis.typeCheckingMode": "basic",
-    "azureFunctions.projectSubpath": "scraping\\azure-detail-count"
+    "azureFunctions.projectSubpath": "scraping\\azure-detail-count",
+    "azureFunctions.deploySubpath": "azure\\durablev2",
+    "azureFunctions.scmDoBuildDuringDeployment": true,
+    "azureFunctions.projectLanguage": "Python",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectLanguageModel": 2
 }
