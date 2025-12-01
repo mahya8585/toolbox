@@ -30,12 +30,16 @@ def file_convert(directory: Path, output_directory: Path) -> None:
         for item in directory.iterdir():
             if item.is_dir():
                 print(f"{item.name} はディレクトリです。中のファイル:")
+                # アウトプットフォルダの作成
+                dir_name = item.name
+                output_directory.joinpath(dir_name).mkdir(parents=True, exist_ok=True)
+
                 for file in item.iterdir():
                     print(f"  - {file.name}")
 
                     # SVGをPNGに変換
                     output_file_name = file.name.replace(".svg", ".png")
-                    convert_svg_to_png(str(directory.joinpath(item.name, file.name)), str(output_directory.joinpath(output_file_name)))
+                    convert_svg_to_png(str(directory.joinpath(dir_name, file.name)), str(output_directory.joinpath(dir_name).joinpath(output_file_name)))
             else:
                 print(item.name)
 
