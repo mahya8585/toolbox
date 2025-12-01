@@ -40,7 +40,8 @@ def file_convert(directory: Path, output_directory: Path) -> None:
                 print(item.name)
 
                 # SVGをPNGに変換
-                convert_svg_to_png(str(directory.joinpath(item.name)), str(output_directory.joinpath(item.name)))
+                output_file_name = item.name.replace(".svg", ".png")
+                convert_svg_to_png(str(directory.joinpath(item.name)), str(output_directory.joinpath(output_file_name)))
 
     except Exception as e:
         print(f"エラーが発生しました: {e}")
