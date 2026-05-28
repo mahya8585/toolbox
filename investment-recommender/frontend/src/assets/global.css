@@ -1,0 +1,105 @@
+/* ======================================================
+   Global styles – kawaii pastel theme 🌸
+   ====================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink-50:  #fff0f6;
+  --pink-100: #ffe3ef;
+  --pink-200: #ffb3d1;
+  --pink-400: #f472b6;
+  --pink-500: #ec4899;
+  --lavender: #e9d5ff;
+  --lavender-dark: #c084fc;
+  --mint:     #d1fae5;
+  --mint-dark: #34d399;
+  --peach:    #fed7aa;
+  --peach-dark: #fb923c;
+  --sky:      #bae6fd;
+  --sky-dark: #38bdf8;
+  --yellow:   #fef9c3;
+  --yellow-dark: #facc15;
+  --white:    #ffffff;
+  --gray-50:  #fafafa;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 2px 8px rgba(236, 72, 153, 0.08);
+  --shadow-md: 0 4px 20px rgba(236, 72, 153, 0.14);
+  --shadow-lg: 0 8px 32px rgba(192, 132, 252, 0.18);
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(135deg, var(--pink-50) 0%, #f5f0ff 50%, #f0f9ff 100%);
+  color: var(--gray-700);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* ── Typography ──────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: 'Poppins', 'Noto Sans JP', sans-serif; }
+
+/* ── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--pink-50); }
+::-webkit-scrollbar-thumb { background: var(--pink-200); border-radius: 999px; }
+
+/* ── Utilities ───────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-pink    { background: var(--pink-100);   color: var(--pink-500); }
+.badge-lavender{ background: var(--lavender);    color: #7c3aed; }
+.badge-mint    { background: var(--mint);        color: #059669; }
+.badge-peach   { background: var(--peach);       color: #c2410c; }
+.badge-sky     { background: var(--sky);         color: #0284c7; }
+.badge-yellow  { background: var(--yellow);      color: #b45309; }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.fade-enter-active, .fade-leave-active { transition: opacity 0.3s ease, transform 0.3s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; transform: translateY(8px); }

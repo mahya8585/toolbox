@@ -1,0 +1,10 @@
+com/example/recommender/model/Customer.class
+com/example/recommender/config/CorsConfig.class
+com/example/recommender/model/SimilarCustomer.class
+com/example/recommender/model/Recommendation.class
+com/example/recommender/config/CorsConfig$1.class
+com/example/recommender/RecommenderApplication.class
+com/example/recommender/service/RecommendationService.class
+com/example/recommender/controller/RecommendationController.class
+com/example/recommender/model/MarketTrend.class
+com/example/recommender/model/Product.class
