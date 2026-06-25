@@ -1,0 +1,9 @@
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/model/Recommendation.java
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/controller/RecommendationController.java
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/model/SimilarCustomer.java
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/model/Product.java
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/model/Customer.java
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/service/RecommendationService.java
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/config/CorsConfig.java
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/RecommenderApplication.java
+/tmp/workspace/mahya8585/toolbox/investment-recommender/backend/src/main/java/com/example/recommender/model/MarketTrend.java

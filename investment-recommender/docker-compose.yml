@@ -1,0 +1,57 @@
+version: '3.9'
+
+services:
+  # ── PostgreSQL (production DB) ──────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: investment-db
+    environment:
+      POSTGRES_DB: investment_db
+      POSTGRES_USER: investment_user
+      POSTGRES_PASSWORD: investment_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U investment_user -d investment_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Spring Boot backend ─────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: investment-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+    # Uncomment the following to connect to PostgreSQL in production:
+    # environment:
+    #   SPRING_PROFILES_ACTIVE: prod
+    #   DB_HOST: db
+    #   DB_PORT: 5432
+    #   DB_NAME: investment_db
+    #   DB_USER: investment_user
+    #   DB_PASSWORD: investment_pass
+    # depends_on:
+    #   db:
+    #     condition: service_healthy
+
+  # ── Vue.js frontend ─────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: investment-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
